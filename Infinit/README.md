@@ -35,6 +35,8 @@ The app has examples of basic interaction for both APS and ACS components.
 ## Steps
 ```
 1. Download and unzip the infinit-adf26.zip file.
-2. npm install
+2. Ensure the NodeJS and NPM dependencies mentioned in above step are installed.
+3. Navigate to the unzipped folder.
+4. npm install
 3. npm start
 ```
