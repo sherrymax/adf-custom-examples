@@ -21,7 +21,7 @@ The documents uploaded as part of process instances should not be stored as part
 ### Create ACS Folder Template (Space Template)
 1. Login to ACS.
 2. Navigate to Repository > Data Dictionary > Space Templates (Follow steps in https://docs.alfresco.com/4.2/tasks/space-nodes-create.html)
-3. Note the node id of the Space Template.
+3. Note the `node id` of the Space Template.
 
 ### Customize the ADF code
 1. Add Custom code in `create-process.component.ts` to invoke the Space Template
@@ -231,10 +231,12 @@ backFromProcessCreation(event: any): void {
 </adf-viewer>
 ```
 
-The updated ADF code is available [Standard-Chartered-Demo.zip](Standard-Chartered-Demo.zip).
+The updated ADF code is available [here](dpw-adf-example.zip).
 
 ### Run the DEMO
 
 ### References
 1. https://docs.alfresco.com/4.2/tasks/tgs-spacetemplates.html
 2. https://docs.alfresco.com/5.0/concepts/templated-nodes-intro.html
+3. https://www.alfresco.com/abn/adf/docs/process-services/components/start-process.component/
+4. https://www.alfresco.com/abn/adf/docs/process-services/components/task-details.component/
