@@ -25,7 +25,7 @@ The documents uploaded as part of process instances should not be stored as part
 
 ### Customize the ADF code
 1. Add Custom code in `create-process.component.ts` to invoke the Space Template
-```
+```typescript
 createFolderFromTemplate(folderName: string, processId: string) {
     const url = 'slingshot/doclib/folder-templates';
     const localthis = this;
@@ -40,7 +40,7 @@ createFolderFromTemplate(folderName: string, processId: string) {
 ```
 
 2. Update callback function `backFromProcessCreation()` to invoke `createFolderFromTemplate()`
-```
+```typescript
 backFromProcessCreation(event: any): void {
     console.log(event);
     this.createFolderFromTemplate(event.name, event.id);
@@ -48,7 +48,7 @@ backFromProcessCreation(event: any): void {
 ```
 
 3. Add custom HTML code to `task-details-container.component.html`
-```
+```html
 <div class="dw-template-container">
     <apw-task-toolbar id="apw-task-toolbar-id"
         [appName]="appName"
