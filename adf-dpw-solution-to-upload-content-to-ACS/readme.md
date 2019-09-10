@@ -1,4 +1,4 @@
-#### Develop a Digital Process Workspace solution for uploading content directly to ACS without storing the uploaded content in APS.
+#### Develop a Digital Process Workspace solution for uploading content directly to ACS and bypassing APS.
 
 ### Use-Case / Requirement
 The documents uploaded as part of process instances should not be stored as part of APS process data. These documents should directly be uploaded to ACS.
