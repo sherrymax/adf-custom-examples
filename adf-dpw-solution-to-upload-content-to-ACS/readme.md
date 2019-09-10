@@ -14,7 +14,7 @@ The documents uploaded as part of process instances should not be stored as part
 ## Configuration Steps
 
 ### Deploy APS Process
-1. Import the [Standard-Chartered-Demo.zip](Standard-Chartered-Demo.zip) app into APS.
+1. Import the [DBP-Demo-App.zip](DBP-Demo-App.zip) app into APS.
 2. Process Flow. ![Process-Flow](Process-Flow.jpg)
 3. Publish/Deploy the APS App.
 
