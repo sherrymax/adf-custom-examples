@@ -6,7 +6,7 @@ The documents uploaded as part of process instances should not be stored as part
 
 ### Prerequisites to run this demo end-2-end
 
-* Alfresco Process Services (powered by Activiti) (Version 1.9 and above) - If you don't have it already, you can download a 30 day trial from [Alfresco Process Services (APS)](https://www.alfresco.com/products/business-process-management/alfresco-activiti).Instructions & help available at [Activiti Docs](http://docs.alfresco.com/activiti/docs/), [Alfresco BPM Community](https://community.alfresco.com/community/bpm)
+* Alfresco Process Services (powered by Activiti) (Version 1.9 or above) - If you don't have it already, you can download a 30 day trial from [Alfresco Process Services (APS)](https://www.alfresco.com/products/business-process-management/alfresco-activiti).Instructions & help available at [Activiti Docs](http://docs.alfresco.com/activiti/docs/), [Alfresco BPM Community](https://community.alfresco.com/community/bpm)
 * Alfresco Content Services (Version 6.1 or above)
 * Application Development Framework (Version 2.6 or above)
 
@@ -15,7 +15,7 @@ The documents uploaded as part of process instances should not be stored as part
 
 ### Deploy APS Process
 1. Import the [Standard-Chartered-Demo.zip](Standard-Chartered-Demo.zip) app into APS.
-2. Process Flow. ![Process-Flow-1](Process-Flow-1.png) ![Process-Flow-2](Process-Flow-2.png)
+2. Process Flow. ![Process-Flow](Process-Flow.jpg)
 3. Publish/Deploy the APS App.
 
 ### Create ACS Folder Template (Space Template)
@@ -46,8 +46,8 @@ backFromProcessCreation(event: any): void {
     this.createFolderFromTemplate(event.name, event.id);
 }
 ```
-3. Add custom HTML code to `task-details-container.component.html`
 
+3. Add custom HTML code to `task-details-container.component.html`
 ```
 <div class="dw-template-container">
     <apw-task-toolbar id="apw-task-toolbar-id"
