@@ -20,7 +20,7 @@ The documents uploaded as part of process instances should not be stored as part
 
 ### Create ACS Folder Template (Space Template)
 1. Login to ACS.
-2. Navigate to Repository > Data Dictionary > Space Templates (Follow steps in https://docs.alfresco.com/4.2/tasks/space-nodes-create.html)
+2. Navigate to Repository > Data Dictionary > Space Templates (Follow steps in https://docs.alfresco.com/6.1/tasks/space-nodes-create.html)
 3. Note the `node id` of the Space Template.
 
 ### Customize the ADF code
