@@ -1,0 +1,124 @@
+.app-container {
+    margin: 10px !important;
+}
+
+@media screen and (max-width: 599px) {
+    .app-container {
+        margin: 0;
+    }
+
+    .app-show-versions-button.mat-icon-button {
+        display: none;
+    }
+}
+
+.app-error-message {
+    text-align: left;
+}
+
+.app-error-message--text {
+    color: var(--theme-warn-color);
+}
+
+.app-document-list-container {
+    min-height: 400px;
+
+    .app-datatable-list {
+        min-height: 400px;
+    }
+
+    adf-upload-drag-area {
+        margin-right: 16px;
+
+        adf-toolbar-title {
+            flex: 0 1 auto;
+        }
+
+        .app-document-action-buttons {
+            flex: 0 0 auto;
+        }
+
+        @media screen and (max-width: 600px) {
+            adf-breadcrumb, .app-document-action-buttons {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+            adf-dropdown-breadcrumb, .app-toolbar-divider-before-more-menu, .app-toolbar-more-menu-button {
+                display: none;
+            }
+        }
+    }
+
+    &:not(.app-document-list-container-in-upload-drag-area) {
+        display: flex;
+        place-content: stretch flex-start;
+        align-items: stretch;
+        max-height: 100%;
+    }
+}
+
+.adf-datatable-card .app-lock-button {
+    top: -10px;
+    position: absolute;
+}
+
+.app-site-container-style {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    min-width: 200px;
+}
+
+.app-content-service-settings {
+    padding: 16px;
+}
+
+.app-manage-versions-sidebar {
+    flex: 0 0 auto;
+
+    &.adf-info-drawer-layout {
+        width: 360px;
+    }
+}
+
+.app-no-result__empty_doc_lib {
+    width: 565px;
+    height: 161px;
+    object-fit: contain;
+    margin-top: 17px;
+}
+
+.app-empty_template {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.app-no-result-message {
+    height: 32px;
+    opacity: 0.26;
+    font-size: var(--theme-headline-font-size);
+    line-height: 1.33;
+    letter-spacing: -1px;
+}
+
+.app-container-recent {
+    mat-icon {
+        margin-left: 20px;
+    }
+
+    .app-empty-list__block {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.adf-preselect-nodes-input {
+    width: 100%;
+}

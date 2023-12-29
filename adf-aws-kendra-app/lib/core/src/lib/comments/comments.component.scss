@@ -1,0 +1,36 @@
+adf-comments {
+    .adf-comments-container {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+    }
+
+    .adf-comments-divider {
+        border-bottom: 1px solid var(--adf-theme-foreground-divider-color);
+    }
+
+    .adf-comments-header {
+        padding: 10px 0;
+        font-size: var(--theme-body-1-font-size);
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .adf-comments-input-container {
+        width: 100%;
+        padding: 8px 0;
+
+        textarea {
+            resize: vertical;
+        }
+
+        .mat-form-field {
+            width: 100%;
+        }
+    }
+
+    .adf-comments-input-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

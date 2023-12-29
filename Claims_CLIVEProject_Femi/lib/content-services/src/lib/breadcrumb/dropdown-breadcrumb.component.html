@@ -1,0 +1,43 @@
+<nav *ngIf="route.length > 0" class="adf-dropdown-breadcrumb-container"
+     role="navigation"
+     [attr.aria-label]="'BREADCRUMB.ARIA-LABEL.BREADCRUMB' | translate">
+
+    <button
+        id="dropdown-breadcrumb-button"
+        [tabindex]="hasPreviousNodes() ? 0 : -1"
+        class="adf-dropdown-breadcrumb-trigger"
+        (click)="open()"
+        [attr.aria-label]="'BREADCRUMB.ARIA-LABEL.DROPDOWN' | translate"
+        data-automation-id="dropdown-breadcrumb-trigger">
+        <mat-icon [class.adf-isRoot]="!hasPreviousNodes()">folder</mat-icon>
+    </button>
+
+    <mat-icon class="adf-dropdown-breadcrumb-item-chevron">chevron_right</mat-icon>
+
+    <div class="adf-dropdown-breadcrumb-path">
+        <mat-select
+            #dropdown
+            *ngIf="hasPreviousNodes()"
+            tabindex="-1"
+            data-automation-id="dropdown-breadcrumb-path"
+            aria-labelledby="dropdown-breadcrumb-button">
+
+            <mat-option
+                *ngFor="let node of previousNodes;"
+                (click)="onRoutePathClick(node, $event)"
+                (onSelectionChange)="onRouteClick(node)"
+                class="adf-dropdown-breadcrumb-path-option"
+                data-automation-class="dropdown-breadcrumb-path-option"
+                [disabled]="readOnly">
+                {{ node.name | translate }}
+            </mat-option>
+        </mat-select>
+    </div>
+
+    <span
+        class="adf-current-folder"
+        [class.adf-isRoot]="!hasPreviousNodes()"
+        data-automation-id="current-folder"
+        aria-current="location">{{ currentNode.name }}
+    </span>
+</nav>

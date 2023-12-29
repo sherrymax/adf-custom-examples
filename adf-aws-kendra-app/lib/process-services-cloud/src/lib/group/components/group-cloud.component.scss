@@ -1,0 +1,61 @@
+.adf {
+    &-cloud-group-list {
+        margin: 5px 0;
+        padding: 10px 0;
+
+        .adf-cloud-group-row {
+            place-content: center flex-start;
+            align-items: center;
+            display: flex;
+
+            .adf-group-short-name {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    &-cloud-group {
+        width: 100%;
+
+        &-option-not-active {
+            background: inherit !important;
+        }
+
+        .mat-form-field {
+            width: 100%;
+        }
+
+        &-error {
+            margin-top: -10px;
+            position: absolute;
+            height: 20px;
+
+            &-message {
+                padding-right: 8px;
+                height: 16px;
+                font-size: var(--theme-caption-font-size);
+                line-height: 1.33;
+                color: var(--theme-warn-color);
+                width: auto;
+            }
+
+            &-icon {
+                font-size: var(--theme-adf-icon-1-font-size);
+                color: var(--theme-warn-color);
+            }
+        }
+    }
+}
+
+.mat-autocomplete-panel .mat-fab {
+    background: var(--theme-primary-color);
+    width: 40px;
+    height: 40px;
+    font-weight: bolder;
+    font-size: var(--theme-adf-picture-1-font-size);
+    box-shadow: none !important;
+
+    .mat-button-wrapper {
+        display: inline !important;
+    }
+}

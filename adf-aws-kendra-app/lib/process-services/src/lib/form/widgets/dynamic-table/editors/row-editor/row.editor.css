@@ -1,0 +1,13 @@
+.row-editor {
+    padding: 8px;
+}
+
+.row-editor__validation-summary {
+    visibility: hidden;
+}
+
+.row-editor__invalid .row-editor__validation-summary {
+    padding: 8px 16px;
+    color: #d50000;
+    visibility: visible;
+}

@@ -1,0 +1,36 @@
+<div class="adf-comments-container">
+    <div id="comment-header" class="adf-comments-header">
+        {{'COMMENTS.HEADER' | translate: { count: comments?.length } }}
+    </div>
+    <div class="adf-comments-input-container" *ngIf="!readOnly">
+            <mat-form-field class="adf-full-width">
+                <textarea 
+                    matInput
+                    id="comment-input"
+                    [attr.aria-label]="'COMMENTS.ADD' | translate"
+                    placeholder="{{'COMMENTS.ADD' | translate}}"
+                    [(ngModel)]="message"
+                    (keydown.escape)="clearMessage($event)"
+                >
+                </textarea>
+            </mat-form-field>
+
+            <div class="adf-comments-input-actions">
+                <button 
+                    mat-button
+                    class="adf-comments-input-add"
+                    data-automation-id="comments-input-add"
+                    color="primary"
+                    (click)="addComment()"
+                    [disabled]="!message"
+                >
+                    {{ 'COMMENTS.ADD' | translate }}
+                </button>
+            </div>
+    </div>
+
+    <div *ngIf="comments.length > 0">
+        <adf-comment-list [comments]="comments">
+        </adf-comment-list>
+    </div>
+</div>

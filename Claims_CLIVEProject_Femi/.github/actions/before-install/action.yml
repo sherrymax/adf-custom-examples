@@ -1,0 +1,75 @@
+name: "before-install"
+description: "launch before_install.sh and then parse env vars"
+inputs:
+  act:
+    description: 'enable act debug'
+    required: false
+    type: boolean
+    default: 'false'
+runs:
+  using: "composite"
+  steps:
+    - name: Before install
+      if: ${{ ! env.ACT }}
+      shell: bash
+      run: |
+        pip install --user --quiet awscli
+
+    - name: base vars
+      shell: bash
+      run: |
+        {
+          echo "GIT_HASH=$(git rev-parse HEAD)";
+          echo "BASE_HASH=$(git merge-base origin/${GITHUB_BASE_REF} HEAD)";
+          echo "HEAD_HASH=HEAD";
+          echo "HEAD_COMMIT_HASH=${GH_COMMIT}";
+          echo "NX_CALCULATION_FLAGS=--all";
+          echo "BUILD_OPTS=--configuration production";
+          echo CI_FORCE_RUN=false;
+          echo NODE_VERSION=$(node -v);
+        } >> $GITHUB_ENV
+
+    - name: affected:* flag parser
+      shell: bash
+      if: ${{ contains(github.event.head_commit.message , '[affected:*]') }}
+      run: |
+        echo "Setting up CI to run with commit flag [affected:*] flag."
+        echo "BREAK_ACTION=true" >> $GITHUB_ENV
+
+    - name: PULL_REQUEST event
+      if: ${{ env.BREAK_ACTION == false && github.event_name == 'pull_request' && !github.event.pull_request.merged }}
+      shell: bash
+      run: |
+        echo "Setting up CI flags for Pull Request event"
+        NX_CALCULATION_FLAGS="--base=origin/${GITHUB_BASE_REF} --head=$HEAD_HASH"
+        {
+          echo "NX_CALCULATION_FLAGS=$NX_CALCULATION_FLAGS";
+          echo "BASE_HASH=origin/${GITHUB_BASE_REF}";
+          echo "BREAK_ACTION=true";
+        } >> $GITHUB_ENV
+
+    - name: RELEASE on master/develop patch branch
+      if: ${{ env.BREAK_ACTION == false && github.event.pull_request.merged }}
+      shell: bash
+      run: |
+        if [[ "${{ github.ref_name }}" =~ ^master(-patch.*)?$ ]]; then
+            # into master(-patch*)
+            echo "Setting up CI flags for Push on master patch"
+        elif [[ "${{ github.ref_name }}" =~ ^develop-patch.*$ ]]; then
+            # into develop-patch*
+            echo "Setting up CI flags for Push develop patch"
+        else
+          echo "Setting up CI flags for Push on develop branch"
+          base=$(git describe --tags $(git rev-list --tags --max-count=1))
+          echo "NX_CALCULATION_FLAGS=--base=$base --head=$HEAD_HASH" >> $GITHUB_ENV
+        fi
+        echo "BREAK_ACTION=true" >> $GITHUB_ENV
+
+    - name: SCHEDULE event
+      if: ${{ github.event_name == 'schedule' }}
+      shell: bash
+      env:
+        EV_NAME: ${{ github.event_name }}
+      run: |
+        echo "Setting up CI to run on SCHEDULE"
+        echo "NX_CALCULATION_FLAGS=--all" >> $GITHUB_ENV

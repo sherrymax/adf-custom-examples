@@ -1,0 +1,24 @@
+<div>
+    <mat-form-field class="adf-date-editor">
+        <label [attr.for]="column.id">{{column.name}} {{DATE_TIME_FORMAT}}</label>
+        <input matInput
+            [matDatetimepicker]="datetimePicker"
+            [(ngModel)]="value"
+            [id]="column.id"
+            [required]="column.required"
+            [disabled]="!column.editable"
+            (focusout)="onDateChanged($any($event).srcElement.value)"
+            (dateChange)="onDateChanged($event)">
+            <mat-datetimepicker-toggle
+                matSuffix
+                [for]="datetimePicker"
+                class="adf-date-editor-button">
+            </mat-datetimepicker-toggle>
+    </mat-form-field>
+    <mat-datetimepicker
+        #datetimePicker
+        type="datetime"
+        [openOnFocus]="true"
+        [timeInterval]="5">
+    </mat-datetimepicker>
+</div>

@@ -1,0 +1,69 @@
+<ng-container>
+  <ng-template let-node="node" #sidebarRightTemplate>
+    <adf-info-drawer [title]="'APP.INFO_DRAWER.TITLE' | translate">
+
+      <adf-info-drawer-tab label="APP.INFO_DRAWER.COMMENTS">
+        <adf-node-comments [nodeId]="nodeId" [readOnly]="!isCommentEnabled">
+        </adf-node-comments>
+      </adf-info-drawer-tab>
+
+      <adf-info-drawer-tab label="APP.INFO_DRAWER.PROPERTIES">
+        <adf-content-metadata-card *ngIf="isPreset" [node]="node" [multi]="multi" [preset]="customPreset"
+          [readOnly]="isReadOnly" [displayAspect]="showAspect" [displayDefaultProperties]="displayDefaultProperties"
+          [displayEmpty]="displayEmptyMetadata"></adf-content-metadata-card>
+
+        <adf-content-metadata-card *ngIf="!isPreset" [node]="node" [multi]="multi" [readOnly]="isReadOnly"
+          [displayAspect]="showAspect" [displayDefaultProperties]="displayDefaultProperties"
+          [displayEmpty]="displayEmptyMetadata"></adf-content-metadata-card>
+
+
+      </adf-info-drawer-tab>
+
+      <adf-info-drawer-tab label="APP.INFO_DRAWER.VERSIONS">
+        <mat-card>
+          <mat-card-content>
+            <adf-version-manager [node]="node">
+            </adf-version-manager>
+          </mat-card-content>
+        </mat-card>
+      </adf-info-drawer-tab>
+    </adf-info-drawer>
+  </ng-template>
+
+</ng-container>
+
+
+<!-- <iframe class="alfresco-enterprise-viewer-testing" [src]="sanitizedAevUrl"></iframe> -->
+
+<!--   
+
+<ng-container >
+
+    <adf-toolbar
+      id="adf-viewer-toolbar"
+      class="adf-viewer-toolbar"
+    >
+      <adf-toolbar-title style="width : auto !important;">
+        <button
+          class="adf-viewer-close-button"
+          data-automation-id="adf-toolbar-back"
+          mat-icon-button
+          title="{{ 'ADF_VIEWER.ACTIONS.CLOSE' | translate }}"
+          (click)="onBackButtonClick()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </adf-toolbar-title>
+
+      <div
+        fxFlex="1 1 auto"
+        class="adf-viewer__file-title"
+        style="flex: 1 1 auto;box-sizing: border-box;"
+      >
+      <span class="adf-viewer__display-name" id="adf-viewer-display-name">{{ node.name }}</span>
+      </div>
+    </adf-toolbar>
+
+    <iframe class="alfresco-enterprise-viewer" [src]="sanitizedAevUrl"></iframe>
+
+  </ng-container> -->

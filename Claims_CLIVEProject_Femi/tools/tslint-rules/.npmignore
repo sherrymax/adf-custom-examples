@@ -1,0 +1,15 @@
+.idea
+
+coverage/
+node_modules
+temp/
+test/
+
+/.editorconfig
+/gulpfile.js
+/.npmignore
+
+*.tgz
+
+/assets/
+local.log

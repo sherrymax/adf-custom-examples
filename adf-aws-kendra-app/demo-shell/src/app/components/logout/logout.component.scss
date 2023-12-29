@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-logout-header-background {
+    overflow: hidden;
+}
+
+.app-logout-section {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.app-logout-headline {
+    h1 {
+        margin: 15px 5px;
+    }
+
+    h2 {
+        margin: 15px 0 25px;
+    }
+}
+
+.app-logout-docs-button {
+    margin: 30px;
+}
+
+.app-logout-login {
+    float: left;
+}

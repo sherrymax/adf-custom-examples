@@ -1,0 +1,60 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<aca-toolbar (featureSelected)="onNavigate($event)"></aca-toolbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Select Your Department</h2>
+                <select name="Business Area" (change)="onSelection($event)">
+                    <option value="Select One">Select One:</option>
+                    <option value="Claims">Claims</option>
+                    <option value="Policy">Policy</option>
+                </select>
+                <h3>Search Criteria</h3>
+        </div>
+        <div class="col-md-3"  *ngIf="loadedsearch === 'Claims'" (searchCreated)="searchSubmitted()">
+            <app-claim-search></app-claim-search>
+        </div>
+        <div class="col-md-3"  *ngIf="loadedsearch === 'Policy'">
+            <app-policy-search></app-policy-search>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="col-md-8" (searchCreated)="searchSubmitted()" *ngIf="search=== true">
+            <div class="row">
+
+            </div>
+            <div style="padding: 0 10px; flex: 85%" >
+                <adf-search-filter-chips></adf-search-filter-chips>
+                <mat-icon adf-reset-search matTooltip="reset" style="padding-right: 5px;">refresh</mat-icon>
+
+                <adf-search-sorting-picker style="width: 100px"></adf-search-sorting-picker>
+            </div>
+            <div class="row">
+                <app-files-component
+                    [showHeader]="showHeader"
+                    [sorting]="sorting"
+                    [sortingMode]="'server'"
+                    [showRecentFiles]="false"
+                    [showSitePicker]="false"
+                    [showSettingsPanel]="false"
+                    [currentFolderId]="null"
+                    [nodeResult]="$any(data)"
+                    [disableDragArea]="true"
+                    [pagination]="pagination"
+                    [searchTerm]="searchedWord"
+                    (changedPageSize)="onRefreshPagination($event)"
+                    (changedPageNumber)="onRefreshPagination($event)"
+                    (turnedNextPage)="onRefreshPagination($event)"
+                    (loadNext)="onRefreshPagination($event)"
+                    (turnedPreviousPage)="onRefreshPagination($event)"
+                    (deleteElementSuccess)="onDeleteElementSuccess()"
+                >
+                </app-files-component>
+            </div>
+        </div>
+
+    </div>
+</div>

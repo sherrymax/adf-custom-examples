@@ -1,0 +1,15 @@
+.adf {
+    &-tree-view-icon {
+        color: #d9e022;
+    }
+
+    &-tree-view-node.mat-tree-node {
+        min-height: 40px;
+        font-size: var(--theme-caption-font-size);
+        align-items: baseline;
+    }
+
+    &-tree-view-label {
+        cursor: pointer;
+    }
+}

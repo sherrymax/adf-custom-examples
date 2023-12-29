@@ -1,0 +1,27 @@
+<div class="adf-search-filter-menu-card">
+    <div class="adf-search-filter-title">
+        <ng-content select="filter-title"></ng-content>
+        <button mat-icon-button
+            class="adf-search-filter-title-action"
+            aria-hidden="false"
+            [attr.aria-label]="'SEARCH.FILTER.BUTTONS.CLOSE' | translate"
+            (click)="onClose()"
+            [matTooltip]="'SEARCH.FILTER.BUTTONS.CLOSE' | translate">
+            <mat-icon>
+                close
+            </mat-icon>
+        </button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="adf-search-filter-content">
+        <ng-content select="filter-content"></ng-content>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="adf-search-filter-actions">
+        <ng-content select="filter-actions"></ng-content>
+    </div>
+</div>

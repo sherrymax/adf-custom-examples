@@ -1,0 +1,25 @@
+[
+    { "title": "Angular Material Design", "file": "angular-material-design.md" },
+    { "title": "Form Extensibility and Customisation", "file": "extensibility.md" },
+    { "title": "Internationalization in ADF", "file": "internationalization.md" },
+    { "title": "Localization in ADF", "file": "localization.md" },
+    { "title": "Theming", "file": "theming.md" },
+    { "title": "Transclusion", "file": "transclusion.md" },
+    { "title": "Typography", "file": "typography.md" },
+    { "title": "Walkthrough - adding indicators to highlight information about a node", "file": "metadata-indicators.md" },
+    { "title": "Tutorials", "file": "tutorialIndex.md",
+        "children": [
+            { "title": "Creating your first ADF application", "file": "creating-your-first-adf-application.md"},
+            { "title": "Creating your JavaScript application using alfresco-js-api", "file": "creating-javascript-app-using-alfresco-js-api.md"},
+            { "title": "Adding a new component", "file": "new-component.md"},
+            { "title": "Adding a new view", "file": "new-view.md"},
+            { "title": "Using components", "file": "using-components.md"},
+            { "title": "Basic theming", "file": "basic-theming.md"},
+            { "title": "Working with a DataTable", "file": "working-with-data-table.md"},
+            { "title": "Working with the Nodes API Service", "file": "working-with-nodes-api-service.md"},
+            { "title": "Working with the Nodes using the JS API", "file": "working-with-nodes-js-api.md"},
+            { "title": "Content metadata component", "file": "content-metadata-component.md"},
+            { "title": "Activiti 7 and ADF", "file": "activiti-7-and-adf.md" }
+        ]
+    }
+]

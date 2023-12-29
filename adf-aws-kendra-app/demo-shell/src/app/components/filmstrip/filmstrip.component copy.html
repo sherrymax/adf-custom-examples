@@ -1,0 +1,28 @@
+<div>
+    <h4>AWS Kendra Recommended Results</h4>
+    <br/>
+    <swiper [loop]="true" [autoHeight]="false" [allowTouchMove]="false"
+        [autoplay]="{ delay: 3000, disableOnInteraction: false }" 
+        [navigation]="false">
+        <ng-template *ngFor="let record of recommededResponseList" data-swiper-autoplay="1000" class="swiper-slide" swiperSlide>            
+            <table>
+                <tr>
+                    <td width="12%">
+                        <div style="border:0px solid lightblue">
+                            <img width="150px" height="150px" src="{{record.sourceLogoURL}}" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="search-results">
+                            <br />
+                            <b>Title : <a style="color:GREEN" href="{{record.documentURI}}" target="blank">{{record.documentTitle}}</a></b><br />
+                            <b>Confidence :</b> {{record.scoreConfidence}} <br />
+                            <b>Excerpt :</b><div [innerHTML]="record.documentExcerptHTMLString | sanitizedHtml"></div><br />
+                            <br />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </ng-template>
+    </swiper>
+</div>

@@ -1,0 +1,71 @@
+<div class="app-container">
+
+ <!-- <div class="app-document-list-container" [ngClass]="{'adf-sticky-document-list': stickyHeader }">-->
+     <adf-document-list
+      #documentList
+      class="app-file-list-container"
+      [permissionsStyle]="permissionsStyle"
+      [currentFolderId]="currentFolderId"
+      (folderChange)="onFolderChange($event)"
+      (permissionError)="handlePermissionError($event)"
+      (name-click)="documentList.onNodeDblClick($any($event).detail?.node)"
+      (filterSelection)="onFilterSelected($event)"
+      (preview)="showFile($event)">
+
+      <data-columns>
+          <data-column
+              key="$thumbnail"
+              type="image"
+              [sortable]="false"
+              class="app-image-table-cell"
+              [class.adf-cell-thumbnail]="thumbnails">
+          </data-column>
+          <data-column
+              key="name"
+              sortingKey="name"
+              class="app-ellipsis-cell"
+              title="{{'DOCUMENT_LIST.COLUMNS.DISPLAY_NAME' | translate}}"
+              [formatTooltip]="getNodeNameTooltip">
+              <ng-template let-context>
+                  <adf-name-column key="name" [context]="context"></adf-name-column>
+              </ng-template>
+          </data-column>
+          <data-column
+              *ngIf="showNameColumn && !hyperlinkNavigation"
+              key="name"
+              sortingKey="name"
+              title="{{'DOCUMENT_LIST.COLUMNS.DISPLAY_NAME' | translate}}"
+              [formatTooltip]="getNodeNameTooltip"
+              class="app-ellipsis-cell adf-expand-cell">
+          </data-column>
+          <data-column
+              title="{{'DOCUMENT_LIST.COLUMNS.CREATED_BY' | translate}}"
+              key="createdByUser.displayName"
+              sortingKey="createdByUser"
+              class="app-desktop-only adf-ellipsis-cell">
+          </data-column>
+          <data-column
+              title="{{'DOCUMENT_LIST.COLUMNS.CREATED' | translate}}"
+              key="createdAt"
+              sortingKey="createdAt"
+              type="date"
+              [format]="enableMediumTimeFormat ? 'medium' : 'timeAgo'"
+              class="app-desktop-only adf-ellipsis-cell">
+          </data-column>
+      </data-columns>
+  </adf-document-list>
+</div>
+<!--  <adf-pagination
+      [target]="documentList"
+      [supportedPageSizes]="[3]"
+      (changePageSize)="onChangePageSize($event)"
+      (changePageNumber)="onChangePageNumber($event)"
+      (nextPage)="onNextPage($event)"
+      (prevPage)="onPrevPage($event)">
+  </adf-pagination>-->
+  <!--adf-infinite-pagination
+      [hidden]="!infiniteScrolling"
+      [target]="documentList"
+      [loading]="documentList.loading">
+      {{ 'ADF-DOCUMENT-LIST.LAYOUT.LOAD_MORE' | translate }}
+  </adf-infinite-pagination-->

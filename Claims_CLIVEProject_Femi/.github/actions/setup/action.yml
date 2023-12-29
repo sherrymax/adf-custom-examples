@@ -1,0 +1,58 @@
+name: 'Setup'
+description: 'Initialize cache, env var load'
+inputs:
+  enable-cache:
+    description: 'enable caching'
+    required: false
+    type: boolean
+    default: 'true'
+  enable-node-modules-cache:
+    description: 'enable caching for node modules'
+    required: false
+    type: boolean
+    default: 'true'
+  act:
+    description: 'enable act debug'
+    required: false
+    type: boolean
+    default: 'false'
+runs:
+  using: "composite"
+  steps:
+      - name: install NPM
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache-dependency-path: package-lock.json
+      - name: get latest tag sha
+        id: tag-sha
+        uses: Alfresco/alfresco-build-tools/.github/actions/git-latest-tag@v1.29.0
+# CACHE
+      - name: Node Modules cache
+        id: node-modules-cache
+        if: ${{ inputs.enable-node-modules-cache == 'true' }}
+        uses: actions/cache@v3
+        env:
+          cache-name: node-modules-cache
+        with:
+          path: |
+            node_modules
+          key: .npm-${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            node_modules-${{ runner.os }}-build-${{ env.cache-name }}-
+            node_modules-${{ runner.os }}-build-
+            node_modules-${{ runner.os }}-
+      - name: pip cache
+        uses: actions/cache@v3
+        if: ${{ inputs.enable-cache == 'true' }}
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-
+          restore-keys: |
+            ${{ runner.os }}
+      - name: load "NPM TAG"
+        uses: ./.github/actions/set-npm-tag
+      - name: before install script
+        uses: ./.github/actions/before-install
+        with:
+          act: ${{ inputs.act }}

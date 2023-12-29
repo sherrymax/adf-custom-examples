@@ -1,0 +1,54 @@
+<div class="app-main-content">
+    <h1>CardView Component</h1>
+
+    <mat-card class="app-card-view">
+        <adf-card-view
+            [properties]="properties"
+            [editable]="isEditable"
+            [displayClearAction]="showClearDateAction"
+            [displayNoneOption]="showNoneOption"
+            [displayLabelForChips]="showLabelForChips">
+        </adf-card-view>
+    </mat-card>
+
+    <div class="app-console" #console>
+        <h3>Changes log:</h3>
+        <p *ngFor="let log of logs">{{ log }}</p>
+    </div>
+
+</div>
+
+<p class="app-toggle">
+    <mat-slide-toggle
+        id="app-toggle-editable"
+        [color]="'primary'"
+        (change)="toggleEditable()"
+        [checked]="isEditable">
+        Editable
+    </mat-slide-toggle><br>
+    <mat-slide-toggle
+        id="app-toggle-clear-date"
+        [color]="'primary'"
+        (change)="toggleClearDate()"
+        [checked]="showClearDateAction">
+        Show clear date icon
+    </mat-slide-toggle><br>
+    <mat-slide-toggle
+        id="app-toggle-none-option"
+        [color]="'primary'"
+        (change)="toggleNoneOption()"
+        [checked]="showNoneOption">
+        Show none option
+    </mat-slide-toggle><br>
+    <mat-slide-toggle
+        id="app-toggle-label-multivalued-chip"
+        [color]="'primary'"
+        (change)="toggleLabelForChips()"
+        [checked]="showLabelForChips">
+        Show label for chips property
+    </mat-slide-toggle>
+</p>
+
+<button mat-button id="adf-reset-card-log" (click)="reset()" color="primary">Reset Log</button>
+
+<br>

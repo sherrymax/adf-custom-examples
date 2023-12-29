@@ -1,0 +1,28 @@
+name: 'Check NPM bundle'
+description: 'check npm bundle'
+
+inputs:
+  branch_name:
+    description: "override GITHUB_REF_NAME"
+    required: false
+    default: $GITHUB_REF_NAME
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: load "NPM TAG"
+      uses: ./.github/actions/set-npm-tag
+      with:
+        branch_name: ${{ inputs.branch_name }}
+    - name: check npm bundle
+      shell: bash
+      id: sha_out
+      run: |
+        if [[ -z $TAG_NPM ]]; then
+            echo "TAG_NPM not set, aborting"
+            exit 1
+        fi
+        ADF_VERSION=$(npm view @alfresco/adf-core@${TAG_NPM} version)
+        echo "check bundle on TAG_NPM='${TAG_NPM}' and ADF_VERSION='${ADF_VERSION}'"
+        ./scripts/github/build/npm-check-bundles.sh -v ${ADF_VERSION}

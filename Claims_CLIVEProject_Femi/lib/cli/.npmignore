@@ -1,0 +1,10 @@
+npm-debug.log
+.idea
+.npmrc
+
+/.editorconfig
+/*.json
+
+/.npmignore
+
+node_modules

@@ -1,0 +1,52 @@
+
+<div class="app-task-list-container" (row-click)="onRowClick($event)">
+    <adf-tasklist class="app-task-list-container"
+        [appId]="appId"
+        [taskId]="id"
+        [name]="name"
+        [processDefinitionId]="processDefinitionId"
+        [processInstanceId]="processInstanceId"
+        [assignment]="assignment"
+        [state]="state"
+        [sort]="sort"
+        [start]="start"
+        [page]="page"
+        [size]="size"
+        [dueAfter]="dueAfter"
+        [dueBefore]="dueBefore"
+        [includeProcessInstance]="includeProcessInstance"
+        #taskList>
+        <data-columns>
+            <!--data-column key="id" title="Id"></data-column>
+            <data-column key="assignee" title="Assignee" class="adf-full-width app-name-column">
+                <ng-template let-entry="$implicit">
+                    <div>{{entry.row.obj.assignee | fullName}}</div>
+                </ng-template>
+            </data-column-->
+            <data-column key="name"  title="{{'DOCUMENT_LIST.COLUMNS.DISPLAY_NAME' | translate}}"></data-column>
+            <data-column key="assignee"  title="{{'TASK_LIST_DEMO.ASSIGNEE' | translate}}"  class="adf-full-width app-name-column">
+                <ng-template let-entry="$implicit">
+                    <div>{{entry.row.obj.assignee | fullName}}</div>
+                </ng-template>
+            </data-column>
+            <!--data-column key="description" title="Description"></data-column-->
+            <data-column key="created" title="{{'DOCUMENT_LIST.COLUMNS.CREATED' | translate}}">
+                <ng-template let-entry="$implicit">
+                    <div>{{entry.row.obj.created | adfLocalizedDate: 'MMM d, yyyy' }} </div>
+                </ng-template>
+            </data-column>
+            <data-column key="dueDate" title="{{'TASK_LIST_DEMO.DUEDATE' | translate}}" type="date">
+                <ng-template let-entry="$implicit">
+                    <div>{{entry.row.obj.dueDate | adfLocalizedDate: 'MMM d, yyyy' }} </div>
+                </ng-template>
+            </data-column>
+            <!--data-column key="processInstanceId" title="Process Instance Id"></data-column>
+            <data-column key="processDefinitionId" title="Process Definition Id"></data-column-->
+        </data-columns>
+    </adf-tasklist>
+
+    <adf-pagination
+        [target]="taskList" [supportedPageSizes]="[3]" >
+    </adf-pagination>
+</div>
+

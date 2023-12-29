@@ -1,0 +1,53 @@
+<mat-toolbar
+    [color]="color"
+    [style.background-color]="color">
+    <button
+        *ngIf="showSidenavToggle && position === 'start'"
+        id="adf-sidebar-toggle-start"
+        data-automation-id="adf-menu-icon"
+        class="mat-icon-button adf-menu-icon"
+        mat-icon-button
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="expandedSidenav"
+        [attr.aria-label]="'CORE.HEADER.ACCESSIBILITY.SIDEBAR_TOGGLE_BUTTON_ARIA_LABEL' | translate">
+        <mat-icon
+            class="mat-icon material-icon"
+            role="img"
+            aria-hidden="true">{{ toggleIcon }}</mat-icon>
+    </button>
+
+    <a *ngIf="showLogo" [routerLink]="redirectUrl" title="{{ tooltip }}">
+        <img
+            src="{{ logo }}"
+            class="adf-app-logo"
+            alt="{{ 'CORE.HEADER.LOGO_ARIA' | translate }}"
+        />
+    </a>
+
+    <h1
+        role="link"
+        [attr.aria-label]="title | translate"
+        [routerLink]="redirectUrl"
+        class="adf-app-title"
+        >
+        {{ title }}
+    </h1>
+
+    <ng-content></ng-content>
+
+    <button
+        *ngIf="showSidenavToggle && position === 'end'"
+        id="adf-sidebar-toggle-end"
+        data-automation-id="adf-menu-icon"
+        class="mat-icon-button adf-menu-icon"
+        mat-icon-button
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="expandedSidenav"
+        [attr.aria-label]="'CORE.HEADER.ACCESSIBILITY.SIDEBAR_TOGGLE_BUTTON_ARIA_LABEL' | translate">
+    >
+        <mat-icon
+            class="mat-icon material-icon"
+            role="img"
+            aria-hidden="true">{{ toggleIcon }}</mat-icon>
+    </button>
+</mat-toolbar>

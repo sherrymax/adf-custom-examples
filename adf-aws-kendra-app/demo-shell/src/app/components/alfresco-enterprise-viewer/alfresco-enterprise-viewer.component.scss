@@ -1,0 +1,26 @@
+iframe.alfresco-enterprise-viewer {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.app-viewer__sidebar {
+    width: 380px !important;
+}
+
+/* stylelint-disable */
+.monaco-scrollable-element {
+    width: 600px;
+}
+
+app-preview-extension {
+    width: 600px;
+}
+
+
+iframe.alfresco-enterprise-viewer-testing {
+    width: 70%;
+    height: 100%;
+    border: none;
+    overflow-x: auto;
+}

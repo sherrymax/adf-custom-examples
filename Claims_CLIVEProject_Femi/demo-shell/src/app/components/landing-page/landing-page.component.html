@@ -1,0 +1,36 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<aca-toolbar (featureSelected)="onNavigate($event)"></aca-toolbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6" *ngIf="loadedFeature === 'landing-page'">
+                Document Library
+                <home-files-component></home-files-component>
+            </div>
+            <div class="col-md-6"*ngIf="loadedFeature === 'landing-page'">
+                My Tasks
+                <app-task-list></app-task-list>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6"*ngIf="loadedFeature === 'landing-page'">
+                Chart
+                <app-chart></app-chart>
+            </div>
+            <div class="col-md-6"*ngIf="loadedFeature === 'landing-page'">
+                Chart 2
+                <app-chart></app-chart>
+            </div>
+        </div>
+        <div *ngIf="loadedFeature === 'case'">
+            <app-case-page></app-case-page>
+
+        </div>
+    </div>
+</div>

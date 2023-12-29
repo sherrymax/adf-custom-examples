@@ -1,0 +1,42 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/libs/process-services-cloud",
+  "assets": [
+    {
+      "glob": "assets/**/*",
+      "input": "./src/lib",
+      "output": "/bundles/"
+    },
+    {
+      "glob": "i18n/*.json",
+      "input": "./src/lib",
+      "output": "/bundles/assets/adf-process-services-cloud/"
+    },
+    {
+      "glob": "**/*.scss",
+      "input": "./src/lib",
+      "output": "/lib"
+    }
+  ],
+
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "flatModuleFile": "adf-process-services-cloud"
+  },
+  "allowedNonPeerDependencies": [
+    "@apollo/client",
+    "apollo-angular",
+    "subscriptions-transport-ws",
+    "@editorjs/editorjs",
+    "@editorjs/code",
+    "@editorjs/header",
+    "@editorjs/inline-code",
+    "@editorjs/list",
+    "@editorjs/marker",
+    "@editorjs/underline",
+    "@quanzo/change-font-size",
+    "editorjs-text-color-plugin",
+    "editorjs-html",
+    "editorjs-paragraph-with-alignment"
+  ]
+}

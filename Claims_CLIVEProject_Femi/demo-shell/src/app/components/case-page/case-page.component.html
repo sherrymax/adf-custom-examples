@@ -1,0 +1,57 @@
+<aca-toolbar></aca-toolbar>
+<div class="container">
+<!--    <adf-toolbar class="app-full-content-toolbar">
+        <adf-toolbar-title>
+            <adf-breadcrumb root="APP.PERSONAL-FILES" [target]="documentList" [folderNode]="documentList.folderNode">
+            </adf-breadcrumb>
+        </adf-toolbar-title>
+        <adf-toolbar-divider></adf-toolbar-divider>
+        <button mat-icon-button [attr.aria-label]="'BREADCRUMB_DEMO.NEW_FOLDER_LABEL' | translate">
+            <mat-icon>create_new_folder</mat-icon>
+        </button>
+        <button mat-icon-button [attr.aria-label]="'BREADCRUMB_DEMO.EDIT_NODE_LABEL' | translate">
+            <mat-icon>create</mat-icon>
+        </button>
+        <button mat-icon-button [attr.aria-label]="'BREADCRUMB_DEMO.DELETE_NODE_LABEL' | translate">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </adf-toolbar>
+-->
+    <div class="col-md-12" id="casefiles">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Claim Details</h4>
+                <app-case></app-case>
+            </div>
+            <mat-divider [vertical]="true"></mat-divider>
+            <div class="col-md-3">
+                <h4>Customer Details</h4>
+                <app-case></app-case>
+            </div>
+            <mat-divider [vertical]="true"></mat-divider>
+            <div class="col-md-3">
+                <app-case-actions></app-case-actions>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4> Claim Files</h4>
+    <!---            <app-documents-view></app-documents-view> -->
+
+                <adf-document-list
+                    currentFolderId="-my-"
+                    (preview)="showPreview($event)">
+                </adf-document-list>
+                <mat-divider [vertical]="true"></mat-divider>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-0" id="docviewer">
+<!--        <h4> Document Preview</h4>-->
+        <adf-alfresco-viewer
+            [(showViewer)]="showViewer"
+            [overlayMode]="isOverlay"
+            [nodeId]="nodeId">
+        </adf-alfresco-viewer>
+    </div>
+</div>

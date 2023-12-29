@@ -1,0 +1,19 @@
+.adf-dropdown-widget {
+    width: 100%;
+}
+
+.adf-dropdown-widget__select {
+    width: 100%;
+}
+
+.adf-dropdown-widget__invalid .adf-dropdown-widget__select {
+    border-color: var(--theme-warn-color);
+}
+
+.adf-dropdown-widget__invalid .adf-dropdown-widget__label {
+    color: var(--theme-warn-color);
+}
+
+.adf-dropdown-widget__invalid .adf-dropdown-widget__label::after {
+    background-color: var(--theme-warn-color);
+}

@@ -1,0 +1,28 @@
+/* stylelint-disable no-descending-specificity */
+.adf-property-list {
+    background: var(--adf-card-view-background);
+    border: var(--adf-card-view-border);
+    border-color: var(--adf-card-view-border-color);
+    border-radius: var(--adf-card-view-border-radius);
+
+    .adf-property {
+        margin-bottom: 20px;
+
+        .adf-property-value-padding-top {
+            margin-top: 6px;
+        }
+
+        .adf-property-field {
+            width: 100%;
+            margin-bottom: -25px;
+
+            .mat-form-field-infix {
+                border-top-width: 0;
+            }
+
+            .mat-form-field-label {
+                margin-top: 6px;
+            }
+        }
+    }
+}

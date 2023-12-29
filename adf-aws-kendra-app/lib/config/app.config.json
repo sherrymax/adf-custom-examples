@@ -1,0 +1,7 @@
+{
+  "description" : "this config file is used in the unit test",
+  "ecmHost": "https://sse.dev.alfrescocloud.com",
+  "bpmHost": "https://sse-apa.dev.alfrescocloud.com",
+  "baseShareUrl": null,
+  "logLevel" : "silent"
+}

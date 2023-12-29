@@ -1,0 +1,11 @@
+<adf-datatable
+    #dataTable
+    class="adf-task-people-list"
+    [rows]="users"
+    [actions]="hasActions()"
+    [showHeader]="showHeader"
+    (rowClick)="selectUser($event)"
+    (rowDblClick)="selectUser($event)"
+    (showRowActionsMenu)="onShowRowActionsMenu($event)"
+    (executeRowAction)="onExecuteRowAction($event)">
+</adf-datatable>

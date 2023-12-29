@@ -1,0 +1,29 @@
+name: Package published
+on:
+  registry_package:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.registry_package.package_type == 'npm' && github.event.registry_package.name == 'adf-core'
+    steps:
+      - name: Dispatch event to monorepo
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.PAT_WRITE_PKG }}
+          retries: 3
+          script: |
+            const payload = {
+              package_name: "${{ github.event.registry_package.name }}",
+              package_version: "${{ github.event.registry_package.package_version.name }}"
+            };
+
+            await github.rest.repos.createDispatchEvent({
+              owner: context.repo.owner,
+              repo: "alfresco-apps",
+              event_type: "package-published",
+              client_payload: payload
+            });
+
+            console.log(`Trigger a dispatch event for the monorepo`);

@@ -1,0 +1,28 @@
+$select-filter-height: 4em !default;
+
+.adf-select-filter-input {
+    height: $select-filter-height;
+    display: flex;
+
+    .adf-select-filter-input-container {
+        width: 100%;
+        display: flex;
+        z-index: 100;
+        font-size: var(--theme-body-1-font-size);
+        color: var(--adf-theme-foreground-text-color-087);
+        line-height: 3em;
+        height: $select-filter-height;
+        padding: 5px 16px 0;
+        background: var(--adf-theme-background-card-color);
+    }
+
+    .mat-form-field {
+        width: 100%;
+    }
+}
+
+.mat-select-panel.adf-select-filter {
+    transform: none !important;
+    overflow-x: hidden !important;
+    max-height: calc(256px + #{$select-filter-height});
+}

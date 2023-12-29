@@ -1,0 +1,78 @@
+/* stylelint-disable no-descending-specificity */
+ul > li > form-field > .adf-focus {
+    .adf-label {
+        color: var(--theme-primary-color);
+    }
+}
+
+.adf {
+    &-error-container {
+        height: 20px;
+        margin-top: -12px;
+    }
+
+    &-error-text {
+        padding: 1px;
+        height: 16px;
+        font-size: var(--theme-caption-font-size);
+        line-height: 1.33;
+        color: var(--theme-warn-color);
+    }
+
+    &-error-icon {
+        font-size: var(--theme-adf-icon-1-font-size);
+        color: var(--theme-warn-color);
+    }
+
+    &-label {
+        color: var(--adf-theme-foreground-secondary-text-color);
+    }
+
+    &-asterisk {
+        padding-left: 2px;
+        color: var(--theme-warn-color);
+    }
+
+    &-invalid {
+        .mat-checkbox-layout {
+            padding-bottom: 12px;
+        }
+
+        .mat-form-field-underline {
+            background-color: var(--theme-warn-color) !important;
+        }
+
+        .mat-select {
+            &-arrow {
+                color: var(--adf-theme-foreground-secondary-text-color) !important;
+            }
+        }
+
+        .adf-file {
+            border-color: var(--theme-warn-color);
+        }
+
+        .mat-form-field-prefix {
+            color: var(--adf-theme-foreground-secondary-text-color);
+        }
+
+        .adf-input {
+            border-color: var(--theme-warn-color);
+        }
+    }
+
+    &-left-label {
+        color: var(--adf-theme-foreground-secondary-text-color);
+    }
+}
+
+/* query for Microsoft IE 11 */
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    adf-form-field {
+        .mat-input-element,
+        .mat-select,
+        .mat-form-field {
+            display: block !important;
+        }
+    }
+}

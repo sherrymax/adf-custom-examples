@@ -1,0 +1,42 @@
+{
+  "name": "@alfresco/adf-cli",
+  "description": "Alfresco ADF cli and utils",
+  "version": "6.2.0",
+  "author": "Hyland Software, Inc. and its affiliates",
+  "bin": {
+    "adf-cli": "./bin/adf-cli",
+    "adf": "./bin/adf-cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alfresco/alfresco-ng2-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alfresco/alfresco-ng2-components/issues"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "develop": "tsc -p tsconfig.json --watch",
+    "dist": "rm -rf ../../dist/libs/cli && npm run build && cp -R ./bin ../../dist/libs/cli && cp -R ./resources ../../dist/libs/cli && cp -R ./templates ../../dist/libs/cli && cp ./package.json ../../dist/libs/cli"
+  },
+  "dependencies": {
+    "@alfresco/js-api": ">=6.3.0-1054",
+    "commander": "^6.2.1",
+    "ejs": "^3.1.9",
+    "license-checker": "^25.0.1",
+    "request": "^2.88.2",
+    "rxjs": "^6.6.6",
+    "shelljs": "^0.8.3",
+    "spdx-license-list": "^5.0.0"
+  },
+  "keywords": [
+    "alfresco-component"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/ejs": "^3.1.2",
+    "@types/node": "^20.1.7",
+    "@types/shelljs": "^0.8.12",
+    "typescript": "^4.9.5"
+  }
+}

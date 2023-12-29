@@ -1,0 +1,41 @@
+<div class="adf-attach-file-widget-container">
+    <div class="adf-attach-widget {{field.className}}"
+        [class.adf-readonly]="field.readOnly">
+        <label class="adf-label" [attr.for]="field.id">{{field.name}}
+            <span class="adf-asterisk" *ngIf="isRequired()">*</span>
+        </label>
+        <div class="adf-attach-widget-container" (focusout)="markAsTouched()">
+            <div class="adf-attach-widget__menu-upload" *ngIf="isUploadButtonVisible()">
+                <button (click)="openSelectDialog()" mat-raised-button color="primary" [id]="field.id"
+                    [matTooltip]="field.tooltip" matTooltipPosition="above" matTooltipShowDelay="1000">
+                    {{ 'FORM.FIELD.ATTACH' | translate }}
+                    <mat-icon>{{getWidgetIcon()}}</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div data-automation-id="adf-attach-widget-readonly-list" class="adf-attach-widget-readonly-table">
+        <adf-cloud-file-properties-table
+            [uploadedFiles]="uploadedFiles"
+            [hasFile]="hasFile"
+            [selectedNode]="selectedNode"
+            [field]="field"
+            [displayedColumns]="displayedColumns"
+            [mimeTypeIcon]="mimeTypeIcon"
+            (rowClick)="onRowClicked($event)"
+            (attachFileClick)="onAttachFileClicked($event)"
+            (downloadFile)="downloadContent($event)"
+            (uploadNewFileVersion)="onUploadNewFileVersion($event)"
+            (contentModelFileHandler)="contentModelFormFileHandler($event)"
+            (removeAttachFile)="onRemoveAttachFile($event)"
+        ></adf-cloud-file-properties-table>
+        <div *ngIf="!hasFile && field.readOnly" id="{{'adf-attach-empty-list-'+field.id}}">
+            {{ 'FORM.FIELD.NO_FILE_ATTACHED' | translate }}
+        </div>
+
+    </div>
+
+    <error-widget [error]="field.validationSummary"></error-widget>
+    <error-widget *ngIf="!field.isValid && isTouched() && !isSelected()" required="{{ 'FORM.FIELD.REQUIRED' | translate }}"></error-widget>
+</div>

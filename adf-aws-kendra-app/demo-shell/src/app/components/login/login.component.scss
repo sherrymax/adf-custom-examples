@@ -1,0 +1,172 @@
+.dw {
+
+    &-setting {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 1;
+
+        &-button {
+            background: rgb(68, 138, 255);
+            border-radius: 100px;
+            min-width: 0px;
+            padding: 10px 16px;
+            color: #fff;
+        }
+    }
+
+}
+
+@media (min-width: 721px) {
+    .mobile-settings {
+        display: none;
+    }
+}
+
+@media (max-width: 720px) {
+    .settings {
+        display: none;
+    }
+}
+
+.login-card[_ngcontent-c1] {
+    position: relative;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    min-height: 80vh;
+    -webkit-animation: fadein 1s ease-in-out;
+    animation: fadein 1s ease-in-out;
+}
+
+.login-content[_ngcontent-c1] {
+    flex: 2 2;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation: fadein 1.5s ease-in-out;
+    animation: fadein 1.5s ease-in-out;
+    min-height: 100%;
+}
+
+.login-aside[_ngcontent-c1] {
+    -webkit-animation: fadein 2.25s ease-in-out;
+    animation: fadein 2.25s ease-in-out;
+    flex: 3 3;
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: column;
+    min-height: 100%;
+    border-radius: 0 10px 10px 0;
+
+    // background: url(https://play.vidyard.com/FhFw3MmJxQtors3otaqnxg.jpg) no-repeat center center;
+    // background: url(https://www.frost.com/wp-content/uploads/2020/09/PR-Featured-Photo-1080x337.png) no-repeat center center;
+    // background: url(http://localhost:3000/resources/images/hyland-healthcare.jpg) no-repeat center center;
+    // background: url(https://thumbs.dreamstime.com/b/doctor-health-insurance-healthcare-graphic-concept-hospital-related-icon-interface-showing-people-money-planning-risk-216415451.jpg) no-repeat center center;
+
+    // background: url(https://advisors.vanguard.com/caas/images/home/singleView/1325010541_GLO_hero_2x.jpg) no-repeat center right;
+    // background: url(https://cdnprod.mafretailproxy.com/cdn-cgi/image/format=auto,onerror=redirect/sys-master-prod/static_images/carrefour_og.jpeg) no-repeat center center;
+    // background: url(https://www.aithority.com/wp-content/uploads/2018/12/moodysanalytics.jpg) no-repeat center center;
+    // background: url(http://localhost:4500/resources/images/CTIA-adf.gif) no-repeat center center;
+    // background: url("landolakes.gif") no-repeat center center;
+
+    // background: url(http://localhost:3000/resources/images/hyland-health-plan-logo.png) no-repeat;
+
+    background: url(https://www.trustetc.com/wp-content/uploads/2020/06/building_wealth_iStock-1025744818_660x443.jpg) no-repeat center right;
+    background-size: cover;
+    position: relative;
+}
+
+.login-aside-overlay[_ngcontent-c1] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 0 10px 10px 0;
+}
+
+.login-welcome-text[_ngcontent-c1] {
+    color: white;
+    letter-spacing: 0.03rem;
+    margin: 0 0 2rem 3rem;
+    font-size: 2.75rem;
+    position: relative;
+    z-index: 5;
+    -webkit-animation: slideright 2s ease-out;
+    animation: slideright 2s ease-out;
+}
+
+.login-aside-hr[_ngcontent-c1] {
+    height: 0.5rem;
+    width: 8rem;
+    border: none;
+    outline: none;
+    background-color: white;
+    position: relative;
+    z-index: 5;
+    margin: 0 0 8rem 3rem;
+    -webkit-animation: slideright 4s ease-out;
+    animation: slideright 4s ease-out;
+}
+
+.main__container[_ngcontent-c1] {
+    justify-content: center;
+    overflow: hidden;
+
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    transition: background 300ms linear;
+    // background-image: linear-gradient(to top, #27A1DB 0%, #1465AE 100%);
+    // background-image: linear-gradient(to top, #EAEAEA 0%, #EAEAEA 100%);
+      background-image: linear-gradient(to top, #AFCBCF 0%, #D9D7D9 100%);
+
+}
+
+
+
+// .mat-card:not([class*=mat-elevation-z]) {
+//     /* box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12); */
+// }
+
+// .adf-login-content .adf-login-card-wide {
+//     border-radius: 8px;
+//     background-color: white;
+//     /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12); */
+//     width: 450px;
+//     min-width: 320px;
+//     padding: 21px 64px 34px 64px;
+//     box-sizing: border-box;
+// }
+
+button#login-button.mat-focus-indicator.adf-login-button.mat-raised-button.mat-button-base.mat-accent.mat-button-disabled {
+    background: #07c9e7;
+    border-radius: 30px;
+}
+
+button#login-button.mat-focus-indicator.adf-login-button.mat-raised-button.mat-button-base.mat-accent {
+    background: #27c208;
+    border-radius: 30px;
+}
+
+.mat-card.mat-card.mat-focus-indicator.adf-login-card-wide {
+    border-radius: 8px;
+    background-color: var(--theme-dialog-bg-color);
+    box-shadow: 0 0 0 0;
+    width: 450px;
+    min-width: 320px;
+    padding: 21px 64px 34px;
+    box-sizing: border-box;
+}
+
+img#adf-login-img-logo{
+    margin-left: -0.4em;
+    width: 15em;
+}

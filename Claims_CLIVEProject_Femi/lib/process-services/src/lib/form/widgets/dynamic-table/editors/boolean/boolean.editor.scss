@@ -1,0 +1,9 @@
+.adf {
+    &-checkbox-label {
+        position: relative;
+        cursor: pointer;
+        font-size: var(--theme-subheading-2-font-size);
+        line-height: 24px;
+        margin: 0;
+    }
+}

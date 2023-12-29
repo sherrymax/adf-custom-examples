@@ -1,0 +1,22 @@
+.mat-form-field-type-mat-select {
+    width: 100%;
+}
+
+.adf-select-item-padding {
+    padding-top: 6px;
+    padding-bottom: 20px;
+}
+
+.adf-select-item-padding-editable {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.adf-select-filter-input {
+    background: var(--adf-theme-background-card-color);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}

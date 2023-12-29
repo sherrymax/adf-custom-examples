@@ -1,0 +1,10 @@
+<mat-accordion [togglePosition]="'before'">
+    <ng-container *ngFor="let panel of panels">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>{{panel.label}}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <ng-container *ngTemplateOutlet="panel.layoutTemplate"></ng-container>
+        </mat-expansion-panel>
+    </ng-container>
+</mat-accordion>

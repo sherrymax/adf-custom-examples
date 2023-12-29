@@ -1,0 +1,80 @@
+<div>
+    <h4>AWS Kendra Recommended Results</h4>
+    <br/>
+    <swiper [loop]="true" [autoHeight]="false" [allowTouchMove]="false"
+        [autoplay]="{ delay: 3000, disableOnInteraction: false }" 
+        [navigation]="false">
+
+        <!-- add below attribute in <swiper> tag to enable pagination -->
+        <!-- [pagination]="{ clickable: true }" -->
+
+        <ng-template *ngFor="let record of recommededResponseList" data-swiper-autoplay="1000" class="swiper-slide" swiperSlide>
+            
+            <table>
+                <tr>
+                    <td width="12%">
+                        <div style="border:0px solid lightblue">
+                            <img width="150px" height="150px" src="{{record.sourceLogoURL}}" />
+                            <!-- <div style="display: flex; justify-content: center"><adf-like
+                                    [nodeId]="record.id"></adf-like></div> -->
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="search-results">
+                            <br />
+                            <b>Title : <a style="color:GREEN" href="{{record.documentURI}}" target="blank">
+                                    {{record.documentTitle}}</a></b><br />
+                            <!-- <b>ID :</b> {{record.id}} <br /> -->
+                            <!-- <b>Type :</b> {{record.type}} <br /> -->
+                            <!-- <b>Format :</b> {{record.format}} <br /> -->
+                            <!-- <b>Source :</b> {{record.sourceRepo}} <br /> -->
+                            <!-- <b>URL : </b> <a href="{{record.documentURI}}" target="blank">{{record.documentURI}}</a> -->
+                            <!-- <br /> -->
+                            <b>Confidence :</b> {{record.scoreConfidence}} <br />
+                            <!-- <b>Page Count :</b> {{record.pageCount}} <br /> -->
+                            <b>Excerpt :</b>
+                            <div [innerHTML]="record.documentExcerptHTMLString | sanitizedHtml"></div><br />
+                            <br />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+            
+            <!-- <div class="angular-with-newlines"> -->
+                <!-- <br /> -->
+                <!-- <b>Title : <a style="color:GREEN" href="{{record.documentURI}}" target="blank">{{record.documentTitle}}</a></b>      -->
+                <!-- <div style="white-space:pre-wrap"><b>ID :</b></div>  -->
+                <!-- <div style="white-space:pre-wrap"><b>ID: </b>{{record.id}}</div> -->
+                <!-- <b>Confidence :</b>  -->
+                <!-- <div style="white-space:pre-wrap"><b>Confidence: </b>{{record.scoreConfidence}}</div> -->
+                <!-- <div style="white-space:pre-wrap"><b>Excerpt: </b><div [innerHTML]="record.documentExcerptHTMLString | sanitizedHtml"></div></div> -->
+                <!-- <b>Excerpt :</b>                 -->
+                <!-- <div [innerHTML]="record.documentExcerptHTMLString | sanitizedHtml"></div><br />  -->
+
+                <!-- <div [innerHTML]="record.scoreConfidence | sanitizedHtml"></div> -->
+                <!-- <table> -->
+                    <!-- <tr><td><b>Confidence</b></td><td><div [innerHTML]="record.scoreConfidence | sanitizedHtml"></div></td></tr> -->
+                    <!-- <tr><td><b>Confidence</b></td><td>{{record.scoreConfidence}}</td></tr> -->
+                    <!-- <tr><td><b>Excerpt</b></td><td><div [innerHTML]="record.documentExcerptHTMLString | sanitizedHtml"></div></td></tr> -->
+                <!-- </table> -->
+<!--                 
+                <b>Confidence :</b> {{record.scoreConfidence}} <br/>
+                <b>Excerpt :</b>
+                <div [innerHTML]="record.documentExcerptHTMLString | sanitizedHtml"></div><br /> -->
+
+            <!-- </div> -->
+        </ng-template>
+
+        <!-- <ng-template data-swiper-autoplay="1000" class="swiper-slide" swiperSlide> -->
+            <!-- <div style="white-space: pre-wrap"> -->
+            <!-- <p> Slide 2 </p>
+            <p> Slide 2 </p>
+            <p> Slide 2 </p> -->
+            <!-- </div> -->
+        <!-- </ng-template> -->
+
+
+    </swiper>
+</div>

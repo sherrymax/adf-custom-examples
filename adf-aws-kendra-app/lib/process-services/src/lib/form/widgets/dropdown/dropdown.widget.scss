@@ -1,0 +1,18 @@
+.adf {
+    &-dropdown-widget {
+        width: 100%;
+
+        .adf-select {
+            padding-top: 0 !important;
+            width: 100%;
+        }
+
+        .mat-select-value-text {
+            font-size: var(--theme-body-1-font-size);
+        }
+
+        &-select {
+            width: 100%;
+        }
+    }
+}

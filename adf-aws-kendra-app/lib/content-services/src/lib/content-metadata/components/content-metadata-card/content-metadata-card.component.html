@@ -1,0 +1,46 @@
+<mat-card *ngIf="node">
+    <mat-card-content>
+        <adf-content-metadata
+            [displayDefaultProperties]="displayDefaultProperties"
+            [expanded]="expanded"
+            [node]="node"
+            [displayEmpty]="displayEmpty"
+            [editable]="editable"
+            [multi]="multi"
+            [displayAspect]="displayAspect"
+            [preset]="preset"
+            [displayTags]="displayTags"
+            [displayCategories]="displayCategories">
+        </adf-content-metadata>
+    </mat-card-content>
+    <mat-card-footer class="adf-content-metadata-card-footer">
+        <div>
+            <button *ngIf="isEditAspectSupported()"
+                mat-icon-button
+                (click)="openAspectDialog()"
+                [attr.title]="'CORE.METADATA.ACTIONS.EDIT_ASPECTS' | translate"
+                [attr.aria-label]="'CORE.METADATA.ACCESSIBILITY.EDIT_ASPECTS' | translate"
+                data-automation-id="meta-data-card-edit-aspect">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <button *ngIf="!readOnly && hasAllowableOperations()"
+                mat-icon-button
+                (click)="toggleEdit()"
+                [attr.title]="'CORE.METADATA.ACTIONS.EDIT' | translate"
+                [attr.aria-label]="'CORE.METADATA.ACCESSIBILITY.EDIT' | translate"
+                data-automation-id="meta-data-card-toggle-edit">
+                <mat-icon>mode_edit</mat-icon>
+            </button>
+        </div>
+        <button *ngIf="displayDefaultProperties" mat-button (click)="toggleExpanded()" data-automation-id="meta-data-card-toggle-expand">
+            <ng-container *ngIf="!expanded">
+                <span data-automation-id="meta-data-card-toggle-expand-label">{{ 'ADF_VIEWER.SIDEBAR.METADATA.MORE_INFORMATION' | translate }}</span>
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </ng-container>
+            <ng-container *ngIf="expanded">
+                <span data-automation-id="meta-data-card-toggle-expand-label">{{ 'ADF_VIEWER.SIDEBAR.METADATA.LESS_INFORMATION' | translate }}</span>
+                <mat-icon>keyboard_arrow_up</mat-icon>
+            </ng-container>
+        </button>
+    </mat-card-footer>
+</mat-card>

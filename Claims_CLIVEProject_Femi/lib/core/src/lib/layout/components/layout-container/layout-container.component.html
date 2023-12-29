@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+    <mat-sidenav
+        [position]="position"
+        [disableClose]="!isMobileScreenSize"
+        [ngClass]="{ 'adf-sidenav--hidden': hideSidenav }"
+        [@sidenavAnimation]="sidenavAnimationState"
+        [opened]="!isMobileScreenSize"
+        [mode]="isMobileScreenSize ? 'over' : 'side'">
+        <ng-content sidenav select="[app-layout-navigation]"></ng-content>
+    </mat-sidenav>
+
+    <div>
+        <div class="adf-container-full-width" [@contentAnimationLeft]="getContentAnimationState()">
+            <ng-content select="[app-layout-content]"></ng-content>
+        </div>
+    </div>
+</mat-sidenav-container>

@@ -1,0 +1,38 @@
+<mat-accordion multi="true" displayMode="flat">
+
+    <button *ngIf="displayResetButton && facetFiltersService.responseFacets"
+            mat-button
+            color="primary"
+            matTooltip="{{ 'SEARCH.FILTER.BUTTONS.RESET-ALL.TOOLTIP' | translate }}"
+            matTooltipPosition="right"
+            adf-reset-search>
+        {{ 'SEARCH.FILTER.BUTTONS.RESET-ALL.LABEL' | translate }}
+    </button>
+    <mat-expansion-panel
+        *ngFor="let category of queryBuilder.categories"
+        [attr.data-automation-id]="'expansion-panel-'+category.name"
+        [(expanded)]="category.expanded">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ category.name | translate }}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <adf-search-widget-container
+            [id]="category.id"
+            [selector]="category.component.selector"
+            [settings]="category.component.settings">
+        </adf-search-widget-container>
+    </mat-expansion-panel>
+
+    <ng-container *ngIf="facetFiltersService.responseFacets && showContextFacets">
+        <mat-expansion-panel [attr.data-automation-id]="'expansion-panel-'+field.label" *ngFor="let field of facetFiltersService.responseFacets"
+                             [expanded]="shouldExpand(field)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>{{ field.label | translate }}</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <adf-search-facet-field [field]="field"></adf-search-facet-field>
+
+        </mat-expansion-panel>
+    </ng-container>
+</mat-accordion>

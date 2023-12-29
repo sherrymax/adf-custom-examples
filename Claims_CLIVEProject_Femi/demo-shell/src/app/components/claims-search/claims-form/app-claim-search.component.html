@@ -1,0 +1,24 @@
+<form>
+    <p>
+        <label>Claim Number <input type="text" class="form-control" #claimNumInput/></label>
+    </p>
+    <p>
+        <label>Policy Number <input type="text" class="form-control" #policyNumInput/></label>
+    </p>
+    <p>
+        <label>Date of Loss <input type="text" class="form-control" #dol/></label>
+    </p>
+    <p>
+        <label>Claimant Name <input type="text" class="form-control" #clmnt/></label>
+    </p>
+    <p>
+        <label>Exposure Type <input type="text" class="form-control" #xps/></label>
+    </p>
+    <p>
+        <label>Line of Business <input type="text" class="form-control" #lob/></label>
+    </p>
+    <p>
+        <button class=" btn btn-primary" (click)="onSearchSubmit(claimNumInput,policyNumInput,dol,clmnt,xps,lob)">Search</button>
+    </p>
+
+</form>

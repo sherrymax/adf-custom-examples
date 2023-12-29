@@ -1,0 +1,35 @@
+<div class="adf-cloud-assignment-container">
+    <mat-form-field [floatLabel]="'auto'">
+        <mat-select class="adf-task-assignment-filter"
+                    placeholder="{{ 'ADF_CLOUD_TASK_ASSIGNMENT_FILTER.ASSIGNMENT_TYPE' | translate }}"
+                    [(ngModel)]="assignmentType"
+                    [attr.data-automation-id]="'adf-task-assignment-filter-select'"
+                    (selectionChange)="onAssignmentTypeChange($event)">
+            <mat-option *ngFor="let assignmentType of assignmentTypeOptions"
+                [value]="assignmentType.value"
+                [attr.data-automation-id]="'adf-task-assignment-filter-' + assignmentType.value">
+                {{ assignmentType.label | translate }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <adf-cloud-group *ngIf="isCandidateGroupsType()"
+        class="adf-group-cloud-filter"
+        data-automation-id="adf-group-cloud-candidate-groups-filter"
+        [mode]="'multiple'"
+        [appName]="appName"
+        [preSelectGroups]="candidateGroups"
+        [mode]="taskFilterProperty.selectionMode"
+        [title]="'ADF_CLOUD_TASK_LIST.START_TASK.FORM.LABEL.CANDIDATE_GROUP'"
+        (changedGroups)="onChangedGroups($event)">
+    </adf-cloud-group>
+
+    <adf-cloud-people *ngIf="isAssignedToType()"
+        class="adf-group-cloud-filter"
+        data-automation-id="adf-group-cloud-assigned-to-filter"
+        [preSelectUsers]="assignedUsers"
+        [title]="'ADF_CLOUD_TASK_LIST.START_TASK.FORM.LABEL.ASSIGNEE'"
+        [appName]="appName"
+        (changedUsers)="onChangedAssignedUsers($event)">
+    </adf-cloud-people>
+</div>

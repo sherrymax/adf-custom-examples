@@ -1,0 +1,45 @@
+<!--LOGIN-->
+
+<!-- <adf-login #alfrescologin
+                [providers]="providers"
+                [fieldsValidation]="customValidation"
+                [disableCsrf]="disableCsrf"
+                [showLoginActions]="false"
+                [copyrightText]="copyrightText"
+                (executeSubmit)="validateForm($event)"
+                (success)="onLogin($event)"
+                (error)="onError($event)">
+</adf-login> -->
+
+
+
+<div _ngcontent-c1="" class="main__container">
+
+    <div _ngcontent-c1="" class="login-card">
+        <main _ngcontent-c1="" class="login-content">
+            <!-- <span _ngcontent-c1="" class="login-header">Login</span> -->
+            <!-- <adf-login #alfrescologin [logoImageUrl]="'../../assets/alfresco-hyland-logo-2.png'"
+                [backgroundImageUrl]="'../../assets/alfInsurance-home.png'" [fieldsValidation]=""
+                [showLoginActions]="false" [copyrightText]="copyrightText" (executeSubmit)="validateForm($event)"
+                (success)="onLogin()" (error)="onError($event)">
+            </adf-login> -->
+            <adf-login #alfrescologin [logoImageUrl]="'assets/alfresco-hyland-logo-2.png'"
+                [backgroundImageUrl]="'../../assets/alfInsurance-home.png'" [fieldsValidation]=""
+                [showLoginActions]="false" [copyrightText]="copyrightText" (executeSubmit)="validateForm($event)"
+                (success)="onLogin()" (error)="onError($event)">
+            </adf-login>
+            
+
+            <!-- <div _ngcontent-c1="" class="signup-link-wrapper">
+            <span _ngcontent-c1="" class="signup-notice">Don't have an account?</span>
+            <a _ngcontent-c1="" class="signup-link" routerlink="/signup" ng-reflect-router-link="/signup" href="/signup">Sign up</a>
+        </div> -->
+        </main>
+        <aside _ngcontent-c1="" class="login-aside">
+            <div _ngcontent-c1="" class="login-aside-overlay"></div>
+            <!-- <h1 _ngcontent-c1="" class="login-welcome-text">Welcome !</h1>
+        <hr _ngcontent-c1="" class="login-aside-hr"> -->
+        </aside>
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+.adf-process-list-loading-margin {
+    margin-left: calc((100% - 100px) / 2);
+    margin-right: calc((100% - 100px) / 2);
+}
+
+.no-content-message {
+    font-size: var(--theme-subheading-2-font-size);
+    font-weight: bold;
+    text-align: center;
+    opacity: 0.54;
+    color: #000;
+}

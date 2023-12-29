@@ -1,0 +1,94 @@
+.adf {
+    &-metadata-properties {
+        .mat-expansion-panel-header.mat-expanded:hover,
+        .mat-expansion-panel-header.mat-expanded:focus {
+            background: var(--adf-theme-background-hover-color);
+        }
+
+        mat-expansion-panel-header {
+            height: 64px;
+
+            .adf-metadata-properties-title {
+                font-weight: normal;
+                font-size: 15px;
+            }
+        }
+
+        .mat-expansion-panel:not([class*='mat-elevation-z']) {
+            box-shadow: none;
+        }
+
+        .adf-metadata-properties-tag {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            margin-top: -14px;
+            margin-bottom: 1em;
+
+            &:first-of-type {
+                margin-top: 5px;
+            }
+        }
+
+        &-tags {
+            padding: 0 10px 0 26px;
+
+            &-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 15px;
+                height: 68px;
+            }
+
+            adf-tags-creator {
+                margin-top: 19px;
+
+                .adf-tags-creation {
+                    padding-right: 0;
+                    padding-left: 12px;
+
+                    .adf-tag {
+                        margin-top: -14px;
+                    }
+                }
+
+                &.adf-creator-with-existing-tags-panel {
+                    background: var(--adf-theme-background-dialog-color);
+                }
+            }
+
+            [hidden] {
+                visibility: hidden;
+            }
+        }
+    }
+
+    &-metadata-action-buttons {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 10px;
+    }
+
+    &-metadata-categories-header {
+        display: flex;
+        flex-direction: column;
+        padding: 0 24px;
+
+        .adf-metadata-categories-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            height: 64px;
+
+            button {
+                margin-right: -14px;
+            }
+
+            [hidden] {
+                visibility: hidden;
+            }
+        }
+    }
+}

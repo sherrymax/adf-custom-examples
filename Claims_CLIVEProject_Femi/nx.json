@@ -1,0 +1,54 @@
+{
+  "npmScope": "adf",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": {
+        "@alfresco/*": "*",
+        "@angular/*": "*",
+        "rxjs": "*"
+      }
+    },
+    "demo-shell/src/index.html": "*",
+    "e2e/protractor.excludes.json": "*",
+    "e2e/protractor.conf.js": "*"
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "demoshell",
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "affected": {
+    "defaultBase": "develop"
+  },
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "dependsOn": [
+            "spellcheck",
+            "stylelint"
+      ]
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "spellcheck", "stylelint"],
+        "cacheDirectory": "nxcache",
+        "runtimeCacheInputs": ["node -v"]
+      }
+    }
+  }
+}
+

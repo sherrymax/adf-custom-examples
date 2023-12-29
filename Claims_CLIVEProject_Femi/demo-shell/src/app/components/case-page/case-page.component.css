@@ -1,0 +1,18 @@
+.col-12 {
+    flex-grow: 1;
+    transition: all 400ms ease;
+}
+.col-0 {
+    width: 0;
+    flex-shrink: 1;
+    transition: all 400ms ease;
+}
+.col-6 {
+    flex-grow: 1;
+    transition: all 400ms ease;
+}
+.col-4 {
+    flex-grow: 1;
+    transition: all 400ms ease;
+}
+

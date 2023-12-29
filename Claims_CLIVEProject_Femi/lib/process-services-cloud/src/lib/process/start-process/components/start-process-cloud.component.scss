@@ -1,0 +1,57 @@
+.adf {
+    &-start-process {
+        .mat-form-field-label {
+            color: var(--adf-theme-mat-grey-color-a200-dark);
+        }
+
+        mat-card-actions,
+        &-cloud-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &-select-process-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-title {
+        padding-bottom: 1.25em;
+    }
+
+    &-process-input-container {
+        margin: 0 7px;
+    }
+
+    &-process-input-autocomplete {
+        display: flex;
+
+        button {
+            position: absolute;
+            right: -14px;
+            top: 0;
+        }
+    }
+
+    &-form-container {
+        .mat-card {
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+    }
+
+    &-start-form-actions {
+        text-align: right !important;
+    }
+
+    &-loading {
+        margin: auto;
+    }
+
+    &-loading-container {
+        min-height: 300px;
+        display: flex;
+        height: 100%;
+    }
+}

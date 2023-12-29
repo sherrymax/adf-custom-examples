@@ -1,0 +1,35 @@
+.adf {
+    &-radio-button-container {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-radio-button-container-horizontal {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &-radio-group {
+        margin-top: 15px;
+        margin-left: 5px;
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    &-radio-group-horizontal {
+        margin-top: 0;
+        margin-left: 25%;
+        display: inline-flex;
+        display: table-column-group;
+    }
+
+    &-radio-button {
+        margin: 5px;
+    }
+
+    &-radio-group-error-message .adf-error-container {
+        margin-top: 5px;
+    }
+}

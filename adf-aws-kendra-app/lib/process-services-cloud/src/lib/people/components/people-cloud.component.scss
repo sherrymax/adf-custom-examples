@@ -1,0 +1,54 @@
+.adf {
+    &-people-cloud {
+        width: 100%;
+
+        &-option-not-active {
+            background: inherit !important;
+        }
+    }
+
+    &-people-cloud-list {
+        margin: 5px 0;
+        padding: 10px 0;
+    }
+
+    &-people-cloud-row {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    &-people-cloud-pic {
+        background: var(--theme-primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        color: var(--adf-theme-foreground-text-color);
+        font-weight: bolder;
+        font-size: var(--theme-adf-picture-1-font-size);
+        text-transform: uppercase;
+    }
+
+    &-start-task-cloud-error {
+        margin-top: -10px;
+        position: absolute;
+        height: 20px;
+
+        &-message {
+            padding-right: 8px;
+            height: 16px;
+            font-size: var(--theme-caption-font-size);
+            line-height: 1.33;
+            color: var(--theme-warn-color);
+            width: auto;
+        }
+
+        &-icon {
+            font-size: var(--theme-adf-icon-1-font-size);
+            color: var(--theme-warn-color);
+        }
+    }
+}

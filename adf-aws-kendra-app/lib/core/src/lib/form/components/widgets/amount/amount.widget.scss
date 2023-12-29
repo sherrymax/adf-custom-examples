@@ -1,0 +1,24 @@
+.adf {
+    &-amount-widget {
+        width: 100%;
+        margin-top: 15px;
+
+        .adf-left-label {
+            line-height: 36px;
+        }
+    }
+
+    &-amount-widget__input {
+        margin-top: -15px;
+
+        .mat-focused {
+            transition: none;
+        }
+
+        &:not(.mat-focused):not(.mat-form-field-invalid) {
+            .adf-amount-widget__prefix-spacing {
+                color: var(--adf-theme-foreground-secondary-text-color);
+            }
+        }
+    }
+}
